@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title> AI Chatbot</title>
+    </head>
+    <body>
+        <h1>Ask AI</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="question" placeholder="Ask Something">
+            <button type="submit">Send</button>
+        </form>
+    <p>{{ anwser }}</p>
+    </body>
+</html>
