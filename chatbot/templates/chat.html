@@ -1,19 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
 <html>
-    <head>
-        <title> AI Chatbot</title>
-    </head>
-    <body>
-        <h1>Ask AI</h1>
+<head>
+    <title>AI Chatbot</title>
 
-        <form method="POST">
-            {% csrf_token %}
-            <input type="text" name="question" placeholder="Ask Something">
-            <button type="submit">Send</button>
-        </form>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
 
-        {% if answer %}
-            <h3>AI Response:</h3>
-            <p>{{ answer }}</p>
-        {% endif %}
-    </body>
+<body>
+
+<div class="container">
+
+    <h1>AI Chatbot</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <input
+            type="text"
+            name="question"
+            placeholder="Ask me anything..."
+            required
+        >
+
+        <button type="submit">Send</button>
+    </form>
+
+    {% if answer %}
+        <div class="answer-box">
+            <h3>AI Response</h3>
+            {{ answer|safe }}
+        </div>
+    {% endif %}
+
+</div>
+
+</body>
 </html>

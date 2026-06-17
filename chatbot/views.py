@@ -1,13 +1,14 @@
 from django.shortcuts import render
 from .ai import ask_ai
+import markdown
 
 def chat(request):
-    answer=""
+    answer= ""
     
     if request.method == "POST":
         question = request.POST.get("question")
         #print("Question:", question)
-        answer = ask_ai(question)
+        answer = markdown.markdown(ask_ai(question))
        # print("Answer:", answer)
         
         
