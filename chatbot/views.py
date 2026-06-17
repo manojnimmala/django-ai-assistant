@@ -6,7 +6,10 @@ def chat(request):
     
     if request.method == "POST":
         question = request.POST.get("question")
-        answer = ask_ai(quetion)
+        #print("Question:", question)
+        answer = ask_ai(question)
+       # print("Answer:", answer)
+        
         
     return render(request, "chat.html", {"answer": answer})
 

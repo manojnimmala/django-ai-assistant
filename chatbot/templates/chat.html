@@ -10,6 +10,10 @@
             <input type="text" name="question" placeholder="Ask Something">
             <button type="submit">Send</button>
         </form>
-    <p>{{ anwser }}</p>
+
+        {% if answer %}
+            <h3>AI Response:</h3>
+            <p>{{ answer }}</p>
+        {% endif %}
     </body>
 </html>

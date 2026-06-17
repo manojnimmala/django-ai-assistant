@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from groq import Groq
 
-
+load_dotenv()
 
 client = Groq(
     api_key=os.environ.get("GROQ_API_KEY"),
@@ -19,4 +19,4 @@ def ask_ai(prompt):
         model="llama-3.3-70b-versatile",
     )
 
-    return response.choices[0].message.content)
+    return response.choices[0].message.content
